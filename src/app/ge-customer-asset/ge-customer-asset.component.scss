@@ -1,0 +1,36 @@
+:host ::ng-deep {
+  .tabset1 {
+    a {
+      &.nav-link{
+        color:white;
+        font-weight: bold;
+        background-color:grey;
+        padding: 0%;
+        &.active {
+          background-color: aqua;
+        }
+        &.disabled{
+          background-color:white;
+          color: black;
+        }
+      }
+    }
+  }
+
+}
+  
+.dropdownTitle {
+  border: none;
+  color: white;
+  &:focus {
+    outline: none;
+  }
+}
+  
+.dropdown-toggle {
+  background:none;
+  &::after{
+	  display:none; 
+  }
+}
+

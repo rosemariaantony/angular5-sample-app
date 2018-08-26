@@ -1,0 +1,75 @@
+.dropdownTitle {
+  border: none;
+  color: black;
+  background-color: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdown-toggle {
+  background: none;
+  &::after {
+    display: none;
+  }
+}
+.nav-tabs{
+  background-color:lightcyan;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link
+{
+background-color: blue;
+}
+.tab1{
+  width:15%;
+}
+
+.tab3{
+  width:39%;
+}
+
+
+.btnFilter{
+  background: none;
+  border:none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.txtSearch{
+  width:75%;
+}
+.txtPatch{
+  width:70%;
+}
+.nav-tabs .nav-link{
+  background-color:gray;
+   color: white;
+}
+
+.filterBorder{
+  border-bottom: 1px solid black;
+
+}
+.checkboxBorder{
+  border-right: 1px solid black;
+
+}
+// ul {
+//   background-color: grey;
+//   li {
+//     color: white;
+//     font-weight: bold;
+
+//     padding: 0%;
+//     &.active {
+//       background-color: aqua;
+//     }
+//     &.disabled {
+//       background-color: white;
+//       color: black;
+//     }
+//   }
+// }

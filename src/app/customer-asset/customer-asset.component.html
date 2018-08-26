@@ -1,0 +1,162 @@
+<ul class="nav nav-tabs justify-content-start">
+  <li class="nav-item tab1">
+    <a class="nav-link active p-0 h-100" href="javascript:;">
+      <div ngbDropdown class="d-inline-block p-0 h-100 w-100">
+        <button class="dropdownTitle w-100 h-100 p-0" id="dropdownBasic1" ngbDropdownToggle>{{selectedItem}} arrow</button>
+        <div class="mt-2" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item" *ngFor="let software of softwares" (click)="setSelectedItem(software)">{{software}}</button>
+
+        </div>
+      </div>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="javascript:;" (click)="selectedTab = 'tab2'">
+      <b>Fancy</b> title details</a>
+  </li>
+
+  <li class="nav-item tab3 ml-auto">
+    <input type="text" placeholder="Search" aria-label="Search" class="mr-3 txtSearch">
+    <button class="btnFilter h-100" (click)="isFilter = !isFilter">All Filters</button>
+  </li>
+</ul>
+<div *ngIf="isFilter===true" class="row">
+  <div class="col-md-12 filterBorder">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="float-md-right mt-2">
+          <button class="">APPLY ALL FILTERS</button>
+          <button class="">CLEAR All Filters</button>
+          <button class="">CANCEL</button>
+        </div>
+      </div>
+    </div>
+    <div class="row pl-3">
+      <div class="col-md-2">
+        <h6>Operating System</h6>
+      </div>
+      <div class="col-md-2 input-group">
+        <h6>Patches</h6>
+        <input type="text" placeholder="Search" aria-label="Search" class="txtPatch">
+
+      </div>
+      <div class="col-md-2">
+        <h6>3rd Party</h6>
+      </div>
+      <div class="col-md-2">
+        <h6>Host Type</h6>
+      </div>
+      <div class="col-md-2">
+        <h6> Server</h6>
+      </div>
+      <div class="col-md-2">
+        <h6>Change Requests</h6>
+      </div>
+    </div>
+
+
+    <div class="row pl-3">
+
+      <div class="col-md-2 checkboxBorder">
+
+
+        <div class="form-check" *ngFor="let os of osList">
+          <input class="form-check-input" name="{{ os.name }}" type="checkbox" id="{{os.name}}">
+          <label class="form-check-label" for="{{os.name}}">
+            {{os.name}}
+          </label>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-md-2 checkboxBorder"> </div>
+    <div class="col-md-2 checkboxBorder"> </div>
+    <div class="col-md-2 checkboxBorder"> </div>
+    <div class="col-md-2 checkboxBorder"> </div>
+    <div class="col-md-2"> </div>
+
+  </div>
+</div>
+<div [ngSwitch]="selectedTab" class="row tab-content">
+  <div *ngSwitchCase="'RIS 5.2'" class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <label>You have 114 results for this product</label>
+      </div>
+      <div class="col-md-6">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-end">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div>
+      <div class="row text-left">
+        <div class="col-md">Host name
+        </div>
+        <div class="col-md">IP & Network
+        </div>
+        <div class="col-md">Host Type
+        </div>
+        <div class="col-md">Server
+        </div>
+
+        <div class="col-md">3rd Party Softwares
+        </div>
+        <div class="col-md">Change Requests
+        </div>
+        <div class="col-md">Location
+        </div>
+
+      </div>
+      <ng-container *ngFor="let data of tableData">
+        <div class="row">
+          <div class="col-md">{{data.hostName}}
+          </div>
+          <div class="col-md">{{data.IPNetwork}}
+          </div>
+
+          <div class="col-md">{{data.hostType}}
+          </div>
+          <div class="col-md">{{data.server}}
+          </div>
+          <div class="col-md">{{data.thirdPartySoftwares}}
+          </div>
+          <div class="col-md">{{data.changeRequests}}
+          </div>
+          <div class="col-md">{{data.location}}
+            <span (click)="onClickExpand(data.id)">down arow</span>
+          </div>
+        </div>
+        <div class="row" *ngIf="expandedRowId===data.id">
+          <div class="col">Expanded data </div>
+        </div>
+      </ng-container>
+
+    </div>
+    <div *ngSwitchCase="'EA'" class="col-md-12">hai item2</div>
+    <div *ngSwitchCase="'PAC'" class="col-md-12">hi item3</div>
+    <div *ngSwitchCase="'tab2'" class="col-md-12">hi tab2</div>
+  </div>
