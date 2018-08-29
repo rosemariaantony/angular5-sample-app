@@ -131,16 +131,24 @@
         </div>
 
       </div>
-      <ng-container *ngFor="let data of tableData">
+      <ng-container *ngFor="let data of tableData;let i = index">
+console.log({{i}})
         <div class="row">
           <div class="col-md">{{data.hostName}}
           </div>
-          <div class="col-md">{{data.IPNetwork}}
+          <div class="col-md">{{data.IPNetwork[0]}}
+            <p>
+              {{data.IPNetwork[1]}}
+
+            </p>
           </div>
 
           <div class="col-md">{{data.hostType}}
           </div>
-          <div class="col-md">{{data.server}}
+          <div class="col-md">{{data.server[0].a}}
+            <span>
+              {{data.server[0].b}}
+            </span>
           </div>
           <div class="col-md">{{data.thirdPartySoftwares}}
           </div>
@@ -151,7 +159,21 @@
           </div>
         </div>
         <div class="row" *ngIf="expandedRowId===data.id">
-          <div class="col">Expanded data </div>
+          <div class="col-md">{{data.hostName}}
+          </div>
+          <div class="col-md">{{data.IPNetwork}}
+          </div>
+
+          <div class="col-md">{{data.hostType}}
+          </div>
+          <div class="col-md">{{data.server[0].c}}
+          </div>
+          <div class="col-md">{{data.thirdPartySoftwares}}
+          </div>
+          <div class="col-md">{{data.changeRequests}}
+          </div>
+          <div class="col-md">{{data.location}}
+          </div>
         </div>
       </ng-container>
 

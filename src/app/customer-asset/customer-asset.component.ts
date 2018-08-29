@@ -25,9 +25,15 @@ export class CustomerAssetComponent implements OnInit {
     {
       id: 1,
       hostName: 'Earl of Lemongrab',
-      IPNetwork: 'Unknown',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
       hostType: 'Lemon Candy',
-      server: 'Earl, Heir to the Candy Kingdom Throne',
+      server: [
+        {
+          a: ' Thrfgdfhone',
+          b: 'defg',
+          c: 'erwet'
+        }
+      ],
       thirdPartySoftwares: 'sgdsgdg',
       changeRequests: 3,
       location: 'dfsds'
@@ -35,9 +41,9 @@ export class CustomerAssetComponent implements OnInit {
     {
       id: 2,
       hostName: 'Earl of Lemongrab',
-      IPNetwork: 'Unknown',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
       hostType: 'Lemon Candy',
-      server: 'Earl, Heir to the Candy Kingdom Throne',
+      server: [{ a: ' Thrfgdfhone', b: 'defg', c: 'erwet' }],
       thirdPartySoftwares: 'sgdsgdg',
       changeRequests: 3,
       location: 'dfsds'
@@ -45,9 +51,9 @@ export class CustomerAssetComponent implements OnInit {
     {
       id: 3,
       hostName: 'Earl of Lemongrab',
-      IPNetwork: 'Unknown',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
       hostType: 'Lemon Candy',
-      server: 'Earl, Heir to the Candy Kingdom Throne',
+      server: [{ a: ' Thrfgdfhone', b: 'defg', c: 'erwet' }],
       thirdPartySoftwares: 'sgdsgdg',
       changeRequests: 3,
       location: 'dfsds'
@@ -55,9 +61,9 @@ export class CustomerAssetComponent implements OnInit {
     {
       id: 4,
       hostName: 'Earl of Lemongrab',
-      IPNetwork: 'Unknown',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
       hostType: 'Lemon Candy',
-      server: 'Earl, Heir to the Candy Kingdom Throne',
+      server: [{ a: ' Thrfgdfhone', b: 'defg', c: 'erwet' }],
       thirdPartySoftwares: 'sgdsgdg',
       changeRequests: 3,
       location: 'dfsds'
