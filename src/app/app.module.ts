@@ -7,6 +7,7 @@ import { GeCustomerAssetComponent } from './ge-customer-asset/ge-customer-asset.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomerAssetComponent } from './customer-asset/customer-asset.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
     GeCustomerAssetComponent,
     CustomerAssetComponent
   ],
-  imports: [BrowserModule, FormsModule, NgbModule.forRoot()],
+  imports: [BrowserModule, FormsModule, NgbModule.forRoot(), HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

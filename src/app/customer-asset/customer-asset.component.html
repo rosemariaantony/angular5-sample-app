@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs justify-content-start">
   <li class="nav-item tab1">
-    <a class="nav-link active p-0 h-100" href="javascript:;">
+    <a class="nav-link p-0 h-100" href="javascript:;" [class.active]="selectedTab === 'RIS 5.2'||selectedTab === 'EA'||selectedTab === 'PAC'">
       <div ngbDropdown class="d-inline-block p-0 h-100 w-100">
         <button class="dropdownTitle w-100 h-100 p-0" id="dropdownBasic1" ngbDropdownToggle>{{selectedItem}} arrow</button>
         <div class="mt-2" ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -11,7 +11,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="javascript:;" (click)="selectedTab = 'tab2'">
+    <a class="nav-link" href="javascript:;" (click)="selectedTab = 'tab2'" [class.active]="selectedTab === 'tab2'">
       <b>Fancy</b> title details</a>
   </li>
 
@@ -114,20 +114,21 @@
     </div>
     <div>
       <div class="row text-left">
+
         <div class="col-md">Host name
         </div>
         <div class="col-md">IP & Network
         </div>
         <div class="col-md">Host Type
         </div>
-        <div class="col-md">Server
+        <div class="col-md-2">Server
         </div>
 
         <div class="col-md">3rd Party Softwares
         </div>
-        <div class="col-md">Change Requests
+        <div class="col-md-2">Change Requests
         </div>
-        <div class="col-md">Location
+        <div class="col-md-2">Location
         </div>
 
       </div>
@@ -145,7 +146,7 @@ console.log({{i}})
 
           <div class="col-md">{{data.hostType}}
           </div>
-          <div class="col-md">{{data.server[0].a}}
+          <div class="col-md-2">{{data.server[0].a}}
             <span>
               {{data.server[0].b}}
             </span>
@@ -166,13 +167,13 @@ console.log({{i}})
 
           <div class="col-md">{{data.hostType}}
           </div>
-          <div class="col-md">{{data.server[0].c}}
+          <div class="col-md-2" *ngFor="let server of data">{{data.server[0].c}}
           </div>
           <div class="col-md">{{data.thirdPartySoftwares}}
           </div>
-          <div class="col-md">{{data.changeRequests}}
+          <div class="col-md-2">{{data.changeRequests}}
           </div>
-          <div class="col-md">{{data.location}}
+          <div class="col-md-2">{{data.location}}
           </div>
         </div>
       </ng-container>
@@ -182,3 +183,38 @@ console.log({{i}})
     <div *ngSwitchCase="'PAC'" class="col-md-12">hi item3</div>
     <div *ngSwitchCase="'tab2'" class="col-md-12">hi tab2</div>
   </div>
+
+
+
+
+<div class="row">
+  <div class="col-md-6">
+
+<div class="row">
+  <div class="col-md-2">Server</div>
+  <div class="col-md-3">IP network</div>
+  <div class="col-md-2"></div>
+  <div class="col-md-5">col</div>
+</div>
+  </div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-md-6">
+
+<div class="row">
+  <div class="col-md-2">col</div>
+  <div class="col-md-3">col</div>
+  <div class="col-md-2">col</div>
+  <div class="col-md-5">col</div>
+</div>
+  </div>
+  <div class="col">col</div>
+  <div class="col"></div>
+  <div class="col">col</div>
+  <div class="col">col</div>
+</div> -->
