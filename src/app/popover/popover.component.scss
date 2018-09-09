@@ -1,0 +1,72 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+// Extra small screen / phone
+// xs: 0,
+// Small screen / phone
+// sm: 576px,
+// Medium screen / tablet
+// md: 768px,
+// Large screen / desktop
+// lg: 992px,
+// Extra large screen / wide desktop
+// xl: 1200px
+
+// search for bootstrap 4 sass cheat sheet
+// https://gist.github.com/anschaef/d7552885c0e1f127cf8830d3bbf6e4b1
+// https://gist.github.com/anthonyholmes/b397e8a95ce2aca71f8e
+
+:host ::ng-deep {
+  .popover {
+    border: 1px solid green;
+    min-width: 200px;
+
+    //screen width : 576px - 768px
+    // media-breakpoint-up -> applies min-width media query
+    // eg: @media (min-width: 992px) {}
+    // media-breakpoint-down ->  applies max-width media query
+    // eg: @media (max-width: 992px) {}
+
+    @include media-breakpoint-up(sm) {
+      min-width: 250px;
+      border: 1px solid red;
+    }
+
+    // screen width : 768x - 900px
+    @include media-breakpoint-up(md) {
+      min-width: 300px;
+      border: 1px solid black;
+    }
+
+    // screen width greater than : 900px
+    @include media-breakpoint-up(lg) {
+      min-width: 400px;
+      border: 1px solid yellow;
+    }
+  }
+  .arrow {
+    display: none;
+  }
+  .popover-header {
+    background-color: blue;
+  }
+  .popover-header::before,
+  .bs-popover-bottom .popover-header::before {
+    border-bottom: none;
+  }
+
+  .popover-body {
+    padding: 0%;
+  }
+}
+.table-content {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .div-head {
+    background-color: red;
+    border-radius: 0.3rem;
+  }
+}

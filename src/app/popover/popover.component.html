@@ -1,0 +1,94 @@
+
+<ng-template #popContent class="p-0">
+  <div class="table-content">
+    <div class="row div-head">
+
+        <div class="col-md">Firstname</div>
+        <div class="col-md">Lastname</div>
+
+        <div class="col-md">Email</div>
+
+        <div class="col-md">Phone Number</div>
+
+
+
+    </div>
+    <div class="row">
+
+      <div class="col-md">Firstname</div>
+      <div class="col-md">Lastname</div>
+
+      <div class="col-md">Email</div>
+
+      <div class="col-md">Phone Number</div>
+
+
+
+  </div>
+  <div class="row">
+
+    <div class="col-md">Firstname</div>
+    <div class="col-md">Lastname</div>
+
+    <div class="col-md">Email</div>
+
+    <div class="col-md">Phone Number</div>
+
+
+
+</div>
+<div class="row">
+
+  <div class="col-md">Firstname</div>
+  <div class="col-md">Lastname</div>
+
+  <div class="col-md">Email</div>
+
+  <div class="col-md">Phone Number</div>
+
+
+
+</div>
+
+<!-- <div class="row">
+
+  <div class="col-md">Firstname</div>
+  <div class="col-md">Lastname</div>
+
+  <div class="col-md">Email</div>
+
+  <div class="col-md">Phone Number</div>
+
+
+
+</div> -->
+<!--
+<div class="row">
+
+  <div class="col-md">John</div>
+  <div class="col-md">Lastname</div>
+
+  <div class="col-md">Email</div>
+
+  <div class="col-md">Phone Number</div>
+
+
+
+</div> -->
+</div>
+</ng-template>
+<div class="row">
+  <div class="col-md-6">
+
+  </div>
+  <div class="col-md-6 ml-auto">
+    <button
+      type="button" class=""
+      [ngbPopover]="popContent" popoverTitle="Customized popover"
+      triggers="manual" #p="ngbPopover" (click)="p.open()"  placement="bottom"
+    >
+      French
+    </button>
+    </div>
+</div>
+

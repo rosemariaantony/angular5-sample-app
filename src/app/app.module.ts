@@ -8,13 +8,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomerAssetComponent } from './customer-asset/customer-asset.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
+import { ConfigurationGridComponent } from './configuration-grid/configuration-grid.component';
+import { PopoverComponent } from './popover/popover.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
     GeCustomerAssetComponent,
-    CustomerAssetComponent
+    CustomerAssetComponent,
+    ConfigurationGridComponent,
+    PopoverComponent
   ],
   imports: [BrowserModule, FormsModule, NgbModule.forRoot(), HttpClientModule],
   providers: [],
