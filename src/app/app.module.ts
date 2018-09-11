@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigurationGridComponent } from './configuration-grid/configuration-grid.component';
 import { PopoverComponent } from './popover/popover.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,14 @@ import { PopoverComponent } from './popover/popover.component';
     GeCustomerAssetComponent,
     CustomerAssetComponent,
     ConfigurationGridComponent,
-    PopoverComponent
+    PopoverComponent,
   ],
-  imports: [BrowserModule, FormsModule, NgbModule.forRoot(), HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    NgbModule.forRoot(),
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
