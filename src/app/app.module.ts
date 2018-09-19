@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfigurationGridComponent } from './configuration-grid/configuration-grid.component';
 import { PopoverComponent } from './popover/popover.component';
 import { DatePipe } from '@angular/common';
+import { BootstrapTableComponent } from './bootstrap-table/bootstrap-table.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DatePipe } from '@angular/common';
     CustomerAssetComponent,
     ConfigurationGridComponent,
     PopoverComponent,
+    BootstrapTableComponent,
   ],
   imports: [
     BrowserModule,

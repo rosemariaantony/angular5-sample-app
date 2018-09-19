@@ -1,0 +1,40 @@
+<h2>
+  Responsive Table with Bootstrap</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover  w-auto">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Languages</th>
+              <th>Population</th>
+              <th>Median Age</th>
+              <th>Area (Km²)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of tableData; let i=index;">
+              <td [attr.rowspan]="category.hostName.length" *ngIf="i===0">{{category.hostName}}</td>
+              <td>{{category.hostType}}</td>
+              <td>{{category.thirdPartySoftwares}}</td>
+              <td>{{category.changeRequests}}       </td>
+              <td>{{category.location}}</td>
+            </tr>
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" class="text-center">Data retrieved from
+                <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and
+                <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
