@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BootstrapTableComponent implements OnInit {
 
-  tableData: any[] = [
+ tableData: any[] = [
     {
       id: 1,
       hostName: 'Earl of Lemongrab',
