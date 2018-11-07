@@ -12,7 +12,8 @@ import { ConfigurationGridComponent } from './configuration-grid/configuration-g
 import { PopoverComponent } from './popover/popover.component';
 import { DatePipe } from '@angular/common';
 import { BootstrapTableComponent } from './bootstrap-table/bootstrap-table.component';
-
+import { NgSelectModule } from '@ng-select/ng-select';
+import { MultiSelectDropdownComponent } from './multi-select-dropdown/multi-select-dropdown.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +23,14 @@ import { BootstrapTableComponent } from './bootstrap-table/bootstrap-table.compo
     ConfigurationGridComponent,
     PopoverComponent,
     BootstrapTableComponent,
+    MultiSelectDropdownComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule.forRoot(),
     HttpClientModule,
+    NgSelectModule
   ],
   providers: [ NgbModal],
   bootstrap: [AppComponent]

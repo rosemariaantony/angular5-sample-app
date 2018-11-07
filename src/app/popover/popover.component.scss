@@ -96,6 +96,14 @@
     }
   }
 }
+.dark-modal{
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .dark-modal .modal-content {
   background-color: #292b2c;
   color: white;

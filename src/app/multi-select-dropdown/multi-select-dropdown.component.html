@@ -1,0 +1,13 @@
+<p>
+  multi-select-dropdown works!
+</p>
+<ng-select class="custom"
+        [items]="peoples"
+        [multiple]="true"
+        [closeOnSelect]="false"
+        [searchable]="false"
+        bindLabel="name"
+        placeholder="Select people"
+        [virtualScroll]="true"
+        [(ngModel)]="selectedPeople1">
+</ng-select>

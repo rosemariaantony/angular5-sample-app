@@ -7,31 +7,25 @@
       <div class="table-responsive">
         <table class="table table-bordered table-hover  w-auto">
           <thead>
-            <tr>
-              <th>Country</th>
-              <th>Languages</th>
-              <th>Population</th>
-              <th>Median Age</th>
-              <th>Area (Km²)</th>
+            <tr class="d-flex flex-row">
+              <th  class=" flex-column">Country</th>
+              <th class=" flex-column">Languages</th>
+              <th class=" flex-column">Population</th>
+              <th class=" flex-column">Median Age</th>
+              <th class=" flex-column">Area (Km²)</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let category of tableData; let i=index;">
-              <td [attr.rowspan]="category.hostName.length" *ngIf="i===0">{{category.hostName}}</td>
-              <td>{{category.hostType}}</td>
-              <td>{{category.thirdPartySoftwares}}</td>
-              <td>{{category.changeRequests}}       </td>
-              <td>{{category.location}}</td>
+            <tr *ngFor="let category of tableData; let i=index;" class="d-flex flex-row">
+              <td class="flex-column ">{{category.hostName}}</td>
+              <td class="flex-column">{{category.hostType}}</td>
+              <td class="flex-column">{{category.thirdPartySoftwares}}</td>
+              <td class=" flex-column">{{category.changeRequests}}       </td>
+              <td class="flex-column">{{category.location}}</td>
             </tr>
 
           </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="5" class="text-center">Data retrieved from
-                <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and
-                <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td>
-            </tr>
-          </tfoot>
+
         </table>
       </div>
       <!--end of .table-responsive-->
