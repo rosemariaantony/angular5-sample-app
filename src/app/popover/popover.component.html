@@ -1,110 +1,87 @@
-
 <ng-template #popContent class="p-0">
-  <div class="table-content">
-    <div class="row div-head">
+    <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Languages</th>
+              <th>Population</th>
+              <th>Median Age</th>
+              <th>Area (Km²)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of tableData; let i=index;" class="">
+              <td>{{category.hostName}}</td>
+              <td>{{category.hostType}}</td>
+              <td>{{category.thirdPartySoftwares}}</td>
+              <td>{{category.changeRequests}}       </td>
+              <td>{{category.location}}</td>
+            </tr>
 
-        <div class="col-md">Firstname</div>
-        <div class="col-md">Lastname</div>
+          </tbody>
 
-        <div class="col-md">Email</div>
-
-        <div class="col-md">Phone Number</div>
-
-
-
-    </div>
-    <div class="row">
-
-      <div class="col-md">Firstname</div>
-      <div class="col-md">Lastname</div>
-
-      <div class="col-md">Email</div>
-
-      <div class="col-md">Phone Number</div>
-
-
-
-  </div>
-  <div class="row">
-
-    <div class="col-md">Firstname</div>
-    <div class="col-md">Lastname</div>
-
-    <div class="col-md">Email</div>
-
-    <div class="col-md">Phone Number</div>
-
-
-
-</div>
-<div class="row">
-
-  <div class="col-md">Firstname</div>
-  <div class="col-md">Lastname</div>
-
-  <div class="col-md">Email</div>
-
-  <div class="col-md">Phone Number</div>
-
-
-
-</div>
-
-<!-- <div class="row">
-
-  <div class="col-md">Firstname</div>
-  <div class="col-md">Lastname</div>
-
-  <div class="col-md">Email</div>
-
-  <div class="col-md">Phone Number</div>
-
-
-
-</div> -->
-<!--
-<div class="row">
-
-  <div class="col-md">John</div>
-  <div class="col-md">Lastname</div>
-
-  <div class="col-md">Email</div>
-
-  <div class="col-md">Phone Number</div>
-
-
-
-</div> -->
-</div>
+        </table>
+      </div>
 </ng-template>
 <div class="row">
-  <div class="col-md-6">
-
-  </div>
+  <div class="col-md-6"></div>
   <div class="col-md-6 ml-auto">
     <button
-      type="button" class=""
-      [ngbPopover]="popContent" popoverTitle="Customized popover"
-      triggers="manual" #p="ngbPopover" (click)="p.open()"  placement="bottom"
+      type="button"
+      class=""
+      [ngbPopover]="popContent"
+      popoverTitle="Customized popover"
+      triggers="manual"
+      #p="ngbPopover"
+      (click)="p.open()"
+      placement="bottom"
     >
       French
     </button>
-    </div>
+  </div>
 </div>
 
 <form class="form-inline">
   <div class="form-group">
     <div class="input-group">
-      <input class="form-control"
-             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"  dateFormat="dd-MMM-yyyy">
+      <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        [dayTemplate]="t"
+        name="dp"
+        [(ngModel)]="model"
+        ngbDatepicker
+        #d="ngbDatepicker"
+      />
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+        <button
+          class="btn btn-outline-secondary calendar"
+          (click)="d.toggle()"
+          type="button"
+        ></button>
       </div>
     </div>
   </div>
 </form>
 
-<hr/>
+<ng-template #t let-date="date" let-focused="focused">
+  <span
+    class="custom-day"
+    [class.focused]="focused"
+    (mouseenter)="isHovered(date)"
+    (mouseleave)="hoveredDate = null"
+  >
+  <ng-template #tipContent> {{ hoveredDate }}</ng-template>
+
+   <button type="button" placement="top"  [ngbTooltip]="tipContent">
+    {{ date.day }}
+    </button>
+
+  </span>
+</ng-template>
+
+<hr />
 <pre>Model: {{ model}}</pre>
 <div class="container">
   <table class="table table-fixed table-striped">
@@ -223,15 +200,25 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Modal title</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="d('Cross click')"
+    >
       <span aria-hidden="true">CLOSE &times;</span>
     </button>
   </div>
-  <div class="modal-body">
-    <p>One fine body&hellip;</p>
-  </div>
+  <div class="modal-body"><p>One fine body&hellip;</p></div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn btn-light" (click)="c('Close click')">
+      Close
+    </button>
   </div>
 </ng-template>
-<button class="btn btn-outline-primary mb-2 mr-2" (click)="openWindowCustomClass(content)">Modal with window custom class</button>
+<button
+  class="btn btn-outline-primary mb-2 mr-2"
+  (click)="openWindowCustomClass(content)"
+>
+  Modal with window custom class
+</button>

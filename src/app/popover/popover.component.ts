@@ -8,6 +8,7 @@ import {
   NgbActiveModal,
   NgbModalRef
 } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date';
 
 export function toInteger(value: any): number {
   return parseInt(`${value}`, 10);
@@ -70,15 +71,87 @@ export class MyFormatter extends NgbDateParserFormatter {
   selector: 'app-popover',
   templateUrl: './popover.component.html',
   styleUrls: ['./popover.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
+  styles: [
+    `
+      .custom-day {
+        text-align: center;
+        padding: 0.185rem 0.25rem;
+        border-radius: 0.25rem;
+        display: inline-block;
+        width: 2rem;
+      }
+      .custom-day:hover,
+      .custom-day.focused {
+        background-color: #e6e6e6;
+      }
+      .weekend {
+        background-color: #f0ad4e;
+        border-radius: 1rem;
+        color: white;
+      }
+      .hidden {
+        display: none;
+      }
+    `
+  ],
   providers: [
     { provide: NgbDateParserFormatter, useClass: MyFormatter },
     NgbActiveModal
   ]
 })
 export class PopoverComponent implements OnInit {
-  model;
+  model: NgbDateStruct;
   modalReference: NgbModalRef;
+  hoveredDate: string;
+  tableData: any[] = [
+    {
+      id: 1,
+      hostName: 'Earl of Lemongrab',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
+      hostType: 'Lemon Candy',
+      server: [
+        {
+          a: ' Thrfgdfhone',
+          b: 'defg',
+          c: 'erwet'
+        }
+      ],
+      thirdPartySoftwares: 'sgdsgdg',
+      changeRequests: 3,
+      location: 'dfsds'
+    },
+    {
+      id: 2,
+      hostName: 'Earl of Lemongrab',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
+      hostType: 'Lemon Candy',
+      server: [{ a: ' Thrfgdfhone', b: 'defg', c: 'erwet' }],
+      thirdPartySoftwares: 'sgdsgdg',
+      changeRequests: 3,
+      location: 'dfsds'
+    },
+    {
+      id: 3,
+      hostName: 'Earl of Lemongrab',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
+      hostType: 'Lemon Candy',
+      server: [{ a: ' Thrfgdfhone', b: 'defg', c: 'erwet' }],
+      thirdPartySoftwares: 'sgdsgdg',
+      changeRequests: 3,
+      location: 'dfsds'
+    },
+    {
+      id: 4,
+      hostName: 'Earl of Lemongrab',
+      IPNetwork: ['Unknown', 'etrey', 'reyey'],
+      hostType: 'Lemon Candy',
+      server: [{ a: ' Thrfgdfhone', b: 'defg', c: 'erwet' }],
+      thirdPartySoftwares: 'sgdsgdg',
+      changeRequests: 3,
+      location: 'dfsds'
+    }
+  ];
   constructor(
     private modalService: NgbModal,
     public activeModal: NgbActiveModal
@@ -88,10 +161,16 @@ export class PopoverComponent implements OnInit {
   openWindowCustomClass(content) {
     this.modalReference = this.modalService.open(content, {
       windowClass: 'dark-modal',
-      size: 'sm', centered: true
+      size: 'sm',
+      centered: true
     });
   }
   closeModal() {
     this.modalReference.close('Modal Closed');
+  }
+
+  isHovered(date: NgbDate) {
+    console.log(date + 'hi');
+    this.hoveredDate = date.toString();
   }
 }

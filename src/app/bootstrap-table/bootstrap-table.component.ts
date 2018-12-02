@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+// import {
+//   ViewChildren,
+//   QueryList,
+//   ElementRef,
+//   Renderer2,
+//   ViewChild,
+//   HostListener
+// } from '@angular/core';
 
 @Component({
   selector: 'app-bootstrap-table',
@@ -6,8 +14,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bootstrap-table.component.scss']
 })
 export class BootstrapTableComponent implements OnInit {
-
- tableData: any[] = [
+  tableData: any[] = [
     {
       id: 1,
       hostName: 'Earl of Lemongrab',
@@ -56,9 +63,33 @@ export class BootstrapTableComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  // @ViewChildren('sourceTh')
+  // sourceTh: QueryList<ElementRef>;
 
-  ngOnInit() {
-  }
+  // @ViewChildren('targetTh')
+  // targetTh: QueryList<ElementRef>;
 
+  // constructor(private renderer: Renderer2) {}
+
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event) {
+  //   this.resizeColumns();
+  // }
+
+  // ngAfterViewInit() {
+  //   // setTimeout(() => {
+  //   this.resizeColumns();
+  //   // }, 1000);
+  // }
+
+  // resizeColumns() {
+  //   const widths = this.targetTh.map(th => th.nativeElement.offsetWidth);
+
+  //   this.sourceTh.forEach((th, index) => {
+  //     this.renderer.setStyle(th.nativeElement, 'min-width', `${widths[index]}px`);
+  //     this.renderer.setStyle(th.nativeElement, 'max-width', `${widths[index]}px`);
+  //   });
+  // }
+
+  ngOnInit() {}
 }

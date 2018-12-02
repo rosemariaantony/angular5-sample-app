@@ -14,6 +14,7 @@ import { DatePipe } from '@angular/common';
 import { BootstrapTableComponent } from './bootstrap-table/bootstrap-table.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MultiSelectDropdownComponent } from './multi-select-dropdown/multi-select-dropdown.component';
+import { MyTestComponent } from './my-test/my-test.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { MultiSelectDropdownComponent } from './multi-select-dropdown/multi-sele
     PopoverComponent,
     BootstrapTableComponent,
     MultiSelectDropdownComponent,
+    MyTestComponent,
   ],
   imports: [
     BrowserModule,
