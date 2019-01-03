@@ -2,22 +2,22 @@
   .custom-slider {
     .ng5-slider {
       .ng5-slider-bar {
-       background:greenyellow;
+        background: greenyellow;
         height: 24px;
         border-radius: 16px;
       }
       .ng5-slider-selection {
         background-image: linear-gradient(
           45deg,
-          darkblue 25%,
-          transparent 25%,
-          transparent 50%,
-          darkblue 50%,
-          75%,
-          transparent 75%,
+          darkblue 29%,
+          transparent 20%,
+          transparent 55%,
+          darkblue 20%,
+          79%,
+          transparent 70%,
           transparent
         );
-        background-size: 10px 10px;
+        background-size: 5px 5px;
       }
       .ng5-slider-tick-legend {
         top: 45px;
@@ -25,13 +25,14 @@
       .ng5-slider-pointer {
         width: 35px;
         height: 35px;
-        top: auto; /* to remove the default positioning */
+        top: auto;
+        /* to remove the default positioning */
         bottom: -20px;
-        // background-color: darkblue;
-        // border-top-left-radius: 3px;
+        // background-color: darkblue; // border-top-left-radius: 3px;
         // border-top-right-radius: 3px;
         background-image: url('../../assets/images/arrow-down.png'); /* The image used */
-        background-position: center; /* Center the image */
+        background-position: center;
+        /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: 40px 40px;
         &:after {
@@ -42,7 +43,6 @@
         width: 0px;
       }
     }
-
     .ng5-slider-inner-tooltip {
       display: none;
     }
