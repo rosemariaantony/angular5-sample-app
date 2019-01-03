@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
@@ -15,6 +16,8 @@ import { BootstrapTableComponent } from './bootstrap-table/bootstrap-table.compo
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MultiSelectDropdownComponent } from './multi-select-dropdown/multi-select-dropdown.component';
 import { MyTestComponent } from './my-test/my-test.component';
+import { DynamicSliderComponent } from './dynamic-slider/dynamic-slider.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +29,15 @@ import { MyTestComponent } from './my-test/my-test.component';
     BootstrapTableComponent,
     MultiSelectDropdownComponent,
     MyTestComponent,
+    DynamicSliderComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule.forRoot(),
     HttpClientModule,
-    NgSelectModule
+    NgSelectModule,
+    Ng5SliderModule
   ],
   providers: [ NgbModal],
   bootstrap: [AppComponent]
